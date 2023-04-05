@@ -1,0 +1,2 @@
+connector_release: https://github.com/UiPath/ProcessMining-TemplateOne-cases-eventlog-connector/releases/tag/v1.0.0
+app_release: https://github.com/UiPath/ProcessMining-TemplateOne/releases/tag/v1.1.0

@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: Event_log_base
+    tests:
+      - pm_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - 'Case_ID'
+            - 'Activity'
+            - 'Event_end'
+          severity: 'warn'
+    columns:
+      - name: '"Case_ID"'
+        tests:
+          - not_null
+          - pm_utils.exists
+      - name: '"Activity"'
+        tests:
+          - not_null
+          - pm_utils.exists
+      - name: '"Event_end"'
+        tests:
+          - not_null
+          - pm_utils.exists
+          - pm_utils.type_timestamp
+      - name: '"Event_ID"'
+        tests:
+          - not_null
+          - unique
+          - pm_utils.exists

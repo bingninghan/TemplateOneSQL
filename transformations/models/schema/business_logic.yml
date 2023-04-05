@@ -1,0 +1,103 @@
+version: 2
+
+models:
+  - name: Cases
+    tests:
+      - pm_utils.equal_rowcount:
+          compare_model: 'Cases_base'
+    columns:
+      - name: '"Case_ID"'
+        tests:
+          - not_null
+          - unique
+      - name: '"Case_start"'
+        tests:
+          - not_null
+      - name: '"Event_count"'
+        tests:
+          - not_null
+          - pm_utils.not_negative
+      - name: '"Throughput_time"'
+        tests:
+          - not_null
+          - pm_utils.not_negative
+      - name: '"Case_has_tag"'
+        tests:
+          - not_null
+      - name: '"Variant"'
+        tests:
+          - not_null
+
+  - name: Event_log
+    tests:
+      - pm_utils.equal_rowcount:
+          compare_model: 'Event_log_base'
+    columns:
+      - name: '"Event_ID"'
+        tests:
+          - not_null
+          - unique
+      - name: '"Case_ID"'
+        tests:
+          - not_null
+      - name: '"Activity"'
+        tests:
+          - not_null
+      - name: '"Event_end"'
+        tests:
+          - not_null
+      - name: '"Event_order"'
+        tests:
+          - not_null
+          - unique
+      - name: '"Event_processing_time"'
+        tests:
+          - pm_utils.not_negative
+      - name: '"Event_throughput_time"'
+        tests:
+          - not_null
+          - pm_utils.not_negative
+      - name: '"Manual_event_processing_time"'
+        tests:
+          - pm_utils.not_negative
+
+  - name: Tags
+    tests:
+      - pm_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - 'Case_ID'
+            - 'Tag'
+    columns:
+      - name: '"Tag_ID"'
+        tests:
+          - not_null
+          - unique
+      - name: '"Case_ID"'
+        tests:
+          - not_null
+      - name: '"Tag"'
+        tests:
+          - not_null
+
+  - name: Due_dates
+    tests:
+      - pm_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - 'Event_ID'
+            - 'Due_date'
+    columns:
+      - name: '"Event_ID"'
+        tests:
+          - not_null
+      - name: '"Due_date"'
+        tests:
+          - not_null
+      - name: '"Actual_date"'
+        tests:
+          - not_null
+      - name: '"Expected_date"'
+        tests:
+          - not_null
+      - name: '"Days_late"'
+        tests:
+          - not_null

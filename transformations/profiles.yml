@@ -1,0 +1,15 @@
+# Copy this content for the setup
+templateone_cases_eventlog:
+  outputs:
+
+    sqlserver:
+      type: sqlserver
+      driver: 'ODBC Driver 17 for SQL Server'
+      server: DESKTOP-4B7TPIH
+      port: 1433
+      user: pm
+      password: 1qaz@WSX
+      database: pm
+      schema: Template_one_schema_sql
+
+  target: sqlserver

@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: Event_log_input
+    columns:
+      - name: '"case_id"'
+        tests:
+          - not_null
+      - name: '"activity"'
+        tests:
+          - not_null
+      - name: '"event_end"'
+        tests:
+          - not_null
+  - name: Cases_input
+    columns:
+      - name: '"case_id"'
+        tests:
+          - not_null
+          - unique

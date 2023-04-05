@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: Cases_base
+    columns:
+      - name: '"Case_ID"'
+        tests:
+          - not_null
+          - unique
+          - pm_utils.exists
