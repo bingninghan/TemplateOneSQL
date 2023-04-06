@@ -1,0 +1,14 @@
+template_one_demo:
+  outputs:
+
+    sqlserver:
+      type: sqlserver
+      driver: 'ODBC Driver 17 for SQL Server'
+      server: 
+      port: 1433
+      user:
+      password:
+      database:
+      schema:
+
+  target: sqlserver

@@ -1,0 +1,21 @@
+{
+	"texts": {
+		"ProcessGold"		: "Process Mining"
+	},
+
+	"ColorTheme": {
+		"PrimaryBackground"	: "#0067DF", 
+		"PrimaryText"      	: "white",
+		"Secondary"	   	: "#0067DF",
+		"Hover"            	: "#0067DF" 
+	},
+
+	"headerBackgroundColor"		: "white",
+	"headerForegroundColor"		: "#273139",
+	"headerDisabledColor"		: "#6B7882",
+	"headerHoverColor"		: "#182027",
+	"headerIcon"			: "mvdata:resources/logo.png",
+	"favicon"			: "mvdata:resources/favicon.png",	
+	"helpURL"			: "https://docs.uipath.com/process-mining/docs/getting-started-with-templateone",
+	"supportedLocales"		: ["de", "en", "es-MX", "es", "fr", "ja", "ko", "pt-BR", "pt", "ru", "tr", "zh-CN"]
+}
