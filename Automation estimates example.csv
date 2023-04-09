@@ -1,0 +1,4 @@
+Activity;Event cost;Event processing time (hh:nn:ss)
+Activity A;100.00;00:30:00
+Activity B;5.25;00:00:10
+Activity C;250.00;02:10:05
