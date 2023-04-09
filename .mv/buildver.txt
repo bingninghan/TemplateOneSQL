@@ -1,1 +1,1 @@
-UiPathProcessMining-22.4.1
+UiPathProcessMining-21.10.1
